@@ -36,9 +36,10 @@ def next():
         newstate=key[3];
         direction=key[4];
         if (state == oldstate):
-            if tape[position] == ch:
+            if tape[position] == ch or ch=="*": 
                 print ("Match: "+str(key));
-                tape = tape[:position]+replace+tape[position+1:];
+                if replace!="*":
+                    tape = tape[:position]+replace+tape[position+1:];
                 state=newstate;
                 if direction =="R":
                     position +=1;
@@ -58,7 +59,7 @@ def main():
         next();
         print("---------------------------------------------");
         i+=1;
-        if i==100:
+        if i==200:
             break;
 
 if __name__ == '__main__':
