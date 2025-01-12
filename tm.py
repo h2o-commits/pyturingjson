@@ -1,4 +1,5 @@
 import json
+import sys;
 
 def init(filename):
     global position;
@@ -46,9 +47,13 @@ def next():
                 break;
 
 def main():
-    init("increment.json");
+    if len(sys.argv)<2:
+        print("Usage: python3 tm.py filename.json")
+        exit(1);
+    init(sys.argv[1]);
     i=0;
     while(state!='h'):
+        print("Step "+str(i)+ ":");
         show();
         next();
         print("---------------------------------------------");
