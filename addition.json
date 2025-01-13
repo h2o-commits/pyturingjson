@@ -3,8 +3,8 @@
    "description": "When started on a tape continaing two binary numbers, on the right end of the second number, this machine will replace the numbers with their sum.",
    "max_state": 25,
    "symbols": "xyzabc01$@",
-   "tape": "#1011101#1001111#",
-   "position": 15,
+   "tape": "1011101 1001111",
+   "position": 14,
    "rules": [
       [ 0, "#", "#", 10, "L" ],
       [ 0, "0", "#", 6, "L" ],

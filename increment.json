@@ -3,7 +3,7 @@
    "description": "The Binary Increment Turing machine will add one to a binary number and halt.",
    "max_state": 25,
    "symbols": "xyzabc01$@",
-   "tape": "10011011#",
+   "tape": "10011011",
    "position": 0,
    "rules": [
       [ 0, "#", "#", 1, "L" ],

@@ -3,7 +3,7 @@
    "description": "When started on the left end of a string containing only a's, b's and c's, this machine will make a copy of the string, with the copy to the right of the original.",
    "max_state": 25,
    "symbols": "xyzabc01$@",
-   "tape": "babccaba##################",
+   "tape": "babccaba",
    "position": 0,
    "rules": [
       [ 0, "#", "#", "h", "R" ],

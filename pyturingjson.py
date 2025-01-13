@@ -21,9 +21,23 @@ def show():
         print(' ', end='');
     print('P');
     print(tape);
-    print("State:"+ str(state));
-    print("Position:"+ str(position));
+    print("State: "+ str(state));
+    print("Position: "+ str(position));
     print("");
+
+def getch():
+    global position;
+    global tape;
+    print(str(position));
+    print(str(tape));
+    if (position>=len(tape)):
+        return "#"
+    elif (position<0):
+        return "#"; 
+    else:
+        if tape[position]==" ":
+            return "#"; 
+        return tape[position];
 
 def next():
     global state;
@@ -36,20 +50,25 @@ def next():
         newstate=key[3];
         direction=key[4];
         if (state == oldstate):
-            if tape[position] == ch or ch=="*": 
+            if getch() == ch or ch=="*": 
                 print ("Match: "+str(key));
                 if replace!="*":
                     tape = tape[:position]+replace+tape[position+1:];
                 state=newstate;
                 if direction =="R":
                     position +=1;
-                else:
-                    position -=1;
+                    if position>=len(tape):
+                        tape=tape+"#";
+                elif direction =="L":
+                    if position==0:
+                        tape="#"+tape;
+                    else:
+                        position -=1;
                 break;
 
 def main():
     if len(sys.argv)<2:
-        print("Usage: python3 tm.py filename.json")
+        print("Usage: python3 pyturingjson.py filename.json")
         exit(1);
     init(sys.argv[1]);
     i=0;
